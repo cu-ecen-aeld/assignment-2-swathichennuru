@@ -3,7 +3,7 @@ SRC := writer.c
 TARGET = writer
 OBJS := $(SRC:.c=.o)
 all: $(TARGET)
-CC=aarch64-none-linux-gnu-gcc
+CC=gcc
 CFLAGS = -g -Wall
 
 $(TARGET) : $(OBJS)
