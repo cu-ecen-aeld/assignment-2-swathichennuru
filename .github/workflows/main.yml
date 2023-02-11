@@ -1,1 +1,19 @@
-
+jobs:
+    unit-test:
+        container: cuaesd/aesd-autotest:unit-test
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - name: Checkout submodules
+            run : git submodule update --init --recursive
+          - name: Run unit test
+            run: ./unit-test.sh
+    full-test:
+        container: cuaesd/aesd-autotest:assignment2
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - name: Checkout submodules
+            run : git submodule update --init --recursive
+          - name: Run full test
+assignment-2-swathichennuru/github-actions.yml at main · cu-ecen-aeld/assignment-2-swathichennuru
